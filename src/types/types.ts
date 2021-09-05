@@ -33,6 +33,7 @@ export interface Project {
 
 export enum PostId {
   queryString = 'query-string',
+  firstStepInSoftwareDeveloping = 'first-step-in-software-developing',
 }
 
 export interface PostMetrics {

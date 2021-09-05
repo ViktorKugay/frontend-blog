@@ -18,6 +18,10 @@ export class FirestoreApiMock {
               views: 1,
               likes: 1,
             },
+            [PostId.firstStepInSoftwareDeveloping]: {
+              views: 1,
+              likes: 1,
+            },
           }),
         1000,
       ),

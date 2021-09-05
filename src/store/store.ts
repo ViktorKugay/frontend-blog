@@ -33,6 +33,10 @@ const globalState = createState<Store>({
         likes: 0,
         views: 0,
       },
+      [PostId.firstStepInSoftwareDeveloping]: {
+        likes: 0,
+        views: 0,
+      },
     }),
   },
 });
