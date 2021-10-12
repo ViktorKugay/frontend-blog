@@ -1,5 +1,15 @@
 // @import '../../../styles/variables.css';
 
+.root {
+  // position: sticky;
+  // top: 0;
+  z-index: 100;
+}
+
+.background {
+  background-color: #edf3f9;
+}
+
 .nav {
   display: flex;
   flex-direction: column;

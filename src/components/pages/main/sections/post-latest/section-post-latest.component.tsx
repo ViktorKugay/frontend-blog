@@ -8,9 +8,10 @@ import posts from '../../../../../../posts.json';
 import s from './section-post-latest.module.scss';
 
 export const SectionPostLatest: React.FC = () => {
-  const renderCard = (post: any) => {
+  const renderCard = (post: any, index: number) => {
     return (
       <CardPostPreviewLarge
+        key={index}
         id={post.attributes.id}
         title={post.attributes.title}
         subtitle={post.attributes.description}

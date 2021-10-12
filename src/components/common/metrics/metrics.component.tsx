@@ -3,8 +3,6 @@ import cn from 'classnames';
 
 import {Text} from '../../ui/text/text.component';
 import {Visibility, ThumbUpAltOutlined, ThumbUpAlt} from '@material-ui/icons';
-
-import {useStore} from '../../../store/store';
 import {PostId} from '../../../types/types';
 
 import s from './metrics.module.scss';
@@ -16,14 +14,10 @@ interface Props {
 }
 
 export const Metrics: React.FC<Props> = ({postId, viewsCount, likesCount}) => {
-  const store = useStore();
-
-  const isPostLiked = store.selectLikedPosts().includes(postId);
+  const isPostLiked = false;
 
   const handleLikeClick = () => {
     if (!isPostLiked) {
-      store.incrementPostLikes(postId);
-      store.setPostLiked(postId);
     }
   };
 
