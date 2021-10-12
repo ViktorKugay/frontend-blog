@@ -7,11 +7,11 @@ export interface PostAttributes {
 }
 
 export interface Post {
-  body: string; // post content markdown
-  html: string; // post content html
-  bodyBegin: number; // number of line
-  frontmatter?: string; // post header
-  attributes: PostAttributes; // custom attributes
+  body: string;
+  html: string;
+  bodyBegin: number;
+  frontmatter?: string;
+  attributes: PostAttributes;
 }
 
 export interface Book {

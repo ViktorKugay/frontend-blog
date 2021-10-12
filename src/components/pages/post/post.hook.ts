@@ -1,5 +1,4 @@
 import {useEffect, useState} from 'react';
-import {useStore} from '../../../store/store';
 import {PostMetrics, Post, FetchStatus} from '../../../types/types';
 
 interface State {
@@ -18,26 +17,6 @@ export function usePostPage(post: Post): FetchStatus<State> {
       },
     },
   });
-
-  const store = useStore();
-  const postsMetrics = store.selectPostsMetrics();
-
-  useEffect(() => {
-    store.fetchPostsMetrics();
-  }, []);
-
-  useEffect(() => {
-    if (postsMetrics.status === 'success') {
-      store.incrementPostViews(post.attributes.id);
-      setState({
-        status: 'success',
-        data: {
-          metrics: postsMetrics.data[post.attributes.id],
-          post: post,
-        },
-      });
-    }
-  }, [postsMetrics.status]);
 
   return state;
 }

@@ -1,7 +1,6 @@
 import {useEffect, useState} from 'react';
 import {PostId, PostMetrics, Post, FetchStatus} from '../../../types/types';
 import {scrollToElement} from 'src/utils/scroll-to-element';
-import {useStore} from '../../../store/store';
 
 import posts from '../../../../posts.json';
 
@@ -16,8 +15,6 @@ export function useMainPage(): FetchStatus<State> {
       posts,
     },
   });
-
-  const store = useStore();
 
   // check if page need scroll to element
   useEffect(() => {
