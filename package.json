@@ -6,6 +6,9 @@
   "private": true,
   "author": "Viktor Kugay",
   "email": "v.e.kugay@gmail.com",
+  "engines": {
+    "node": "^12.22.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "yarn build:posts && yarn build:app",
