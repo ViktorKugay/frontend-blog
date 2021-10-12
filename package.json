@@ -2,8 +2,8 @@
   "name": "viktor-ku-blog",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT",
   "private": true,
+  "license": "MIT",
   "author": "Viktor Kugay",
   "email": "v.e.kugay@gmail.com",
   "engines": {
