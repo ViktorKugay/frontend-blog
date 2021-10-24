@@ -12,5 +12,10 @@ function envs() {
   cp .env.example .env.local
 }
 
-coverage
+function posts() {
+  yarn build:posts
+}
+
 envs
+posts
+coverage
