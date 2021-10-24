@@ -1,5 +1,3 @@
-import {useEffect} from 'react';
-
 import {metricsService} from '@services';
 import {MainPage} from '@atomic/templates/MainPage/MainPage';
 import {MainHead} from '@atomic/templates/MainPage/MainHead';
@@ -11,11 +9,7 @@ interface Props {
 }
 
 export default function MainRoute({metrics}: Props): JSX.Element {
-  const {metricsStore} = useMetricsStore();
-
-  useEffect(() => {
-    metricsStore.setMetrics(metrics);
-  }, []);
+  useMetricsStore(metrics);
 
   return (
     <>

@@ -1,17 +1,23 @@
 import {GetStaticPropsContext} from 'next';
 
+import {MetricsTable} from '../../src/frontend/services/metrics/Metrics';
+
 import {PostPage} from '@atomic/templates/PostPage/PostPage';
 import {PostHead} from '@atomic/templates/PostPage/PostHead';
 import {ErrorPage} from '@atomic/templates/ErrorPage/ErrorPage';
+import {useMetricsStore} from '@hooks/metrics/useMetricsStore';
 import {usePostBySlug} from '@hooks/posts/usePostsStore';
 import {metricsService} from '@services';
 import {postsStore} from '@store';
 
 interface Props {
   postSlug: string;
+  metrics: MetricsTable;
 }
 
-export default function PostRoute({postSlug}: Props): JSX.Element {
+export default function PostRoute({postSlug, metrics}: Props): JSX.Element {
+  useMetricsStore(metrics);
+
   const post = usePostBySlug(postSlug);
   if (!post) {
     return <ErrorPage mod="404" />;
@@ -29,10 +35,10 @@ export async function getStaticPaths() {
   const posts = postsStore.findAll();
 
   const paths = posts.map((post) => ({
-    params: { postSlug: post.slug },
+    params: {postSlug: post.slug},
   }));
 
-  return { paths, fallback: false }
+  return {paths, fallback: false};
 }
 // @See https://nextjs.org/docs/basic-features/data-fetching
 export async function getStaticProps({params}: GetStaticPropsContext) {
@@ -43,10 +49,12 @@ export async function getStaticProps({params}: GetStaticPropsContext) {
     metricsService.updateViewsById(post.id).catch(() => {});
   }
 
+  const metrics = await metricsService.findAll();
+
   return {
     props: {
-      postSlug
+      postSlug,
+      metrics,
     },
   };
 }
-
