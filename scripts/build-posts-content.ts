@@ -1,4 +1,3 @@
-import {Post, PostAttributes} from '../src/types/types';
 import {readFileSync, readdirSync, writeFileSync} from 'fs';
 import frontmatter from 'front-matter';
 import Showdown from 'showdown';
@@ -12,7 +11,7 @@ const OUTPUT_PATH = resolve('posts.json');
 
 buildPostsContent();
 
-export function buildPostsContent(input: string = INPUT_PATH): Post[] {
+export function buildPostsContent(input: string = INPUT_PATH): any[] {
   const postsDirSourceMap = readdirSync(input);
   const postsContentList = postsDirSourceMap.reduce(postContentBuilder(input), []);
 
@@ -24,23 +23,23 @@ export function buildPostsContent(input: string = INPUT_PATH): Post[] {
 }
 
 function postContentBuilder(input: string) {
-  return (acc: Post[], postPath: string) => {
+  return (acc: any[], postPath: string) => {
     if (isPost(postPath)) {
       const postContentMd = readFileSync(resolve(input, postPath), 'utf-8');
 
-      const postContentJson = frontmatter<PostAttributes>(postContentMd);
+      const postContentJson = frontmatter<any>(postContentMd);
       const postContentHtml = converter.makeHtml(postContentJson.body);
 
       validatePostAttributes(postContentJson.attributes);
 
-      acc.push({...postContentJson, html: postContentHtml});
+      acc.push({...postContentJson.attributes, html: postContentHtml});
     }
 
     return acc;
   };
 }
 
-function validatePostAttributes(attributes: PostAttributes): void {
+function validatePostAttributes(attributes: any): void {
   const {id, image, title, description, date} = attributes;
 
   assert(id, 'ID');

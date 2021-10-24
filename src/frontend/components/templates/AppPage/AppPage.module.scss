@@ -1,0 +1,17 @@
+.root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &::before {
+    position: absolute;
+    z-index: -1000;
+    top: -250px;
+    right: 0;
+    left: 0;
+    height: 750px;
+    content: '';
+    background: linear-gradient(#507eb1, #709dc7 10%, #dde9f5 38%, #f6f9fc 80%);
+    transform: skewY(-5deg);
+  }
+}

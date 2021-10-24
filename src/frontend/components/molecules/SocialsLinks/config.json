@@ -1,0 +1,17 @@
+{
+  "SocialsLinks": [
+    {
+      "linkHref": "https://github.com/ViktorKugay",
+      "imageSrc": "/github.svg"
+    },
+    {
+      "linkHref": "https://linkedin.com/in/viktor-kugai-96ba07179",
+      "imageSrc": "/linkedin.svg"
+    },
+
+    {
+      "linkHref": "https://twitter.com/ViktorKugay",
+      "imageSrc": "/twitter.svg"
+    }
+  ]
+}

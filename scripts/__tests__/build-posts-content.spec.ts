@@ -13,11 +13,11 @@ describe('BuildContent', () => {
 
     it('should has valid attributes', () => {
       const [buildedArticle] = buildPostsContent(INPUT_POSTS_MOCK_PATH_VALID);
-      expect(buildedArticle.attributes.id).toBeDefined();
-      expect(buildedArticle.attributes.title).toBeDefined();
-      expect(buildedArticle.attributes.description).toBeDefined();
-      expect(buildedArticle.attributes.image).toBeDefined();
-      expect(buildedArticle.attributes.date).toBeDefined();
+      expect(buildedArticle.id).toBeDefined();
+      expect(buildedArticle.title).toBeDefined();
+      expect(buildedArticle.description).toBeDefined();
+      expect(buildedArticle.image).toBeDefined();
+      expect(buildedArticle.date).toBeDefined();
     });
   });
 
@@ -26,7 +26,7 @@ describe('BuildContent', () => {
       try {
         buildPostsContent(INPUT_POSTS_MOCK_PATH_INVALID);
         expect('this code').toBe('never executed');
-      } catch (e) {
+      } catch (e: any) {
         expect(e.message).toBe('ID');
       }
     });

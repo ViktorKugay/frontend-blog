@@ -1,0 +1,8 @@
+{
+  "Image": {
+    "defaultProps": {
+      "alt": "awesome image"
+    },
+    "blurDataURL": "https://flevix.com/wp-content/uploads/2020/01/Preloader.gif"
+  }
+}

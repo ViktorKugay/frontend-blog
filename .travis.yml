@@ -1,0 +1,23 @@
+---
+
+env: 
+  global:
+    - CC_TEST_REPORTER_ID=ef63f5d6d0f3ffa1fec53e7bb5d7c4e6bed326f13f57e0b8d42c27c6862b6d59
+
+language: node_js
+
+node_js:
+  - node
+
+before_script:
+  - chmod +x ./scripts/before_script.sh
+  - ./scripts/before_script.sh
+
+script:
+  - yarn lint
+  - yarn typecheck
+  - yarn test:coverage
+  
+after_script:
+  - chmod +x ./scripts/after_script.sh
+  - ./scripts/after_script.sh

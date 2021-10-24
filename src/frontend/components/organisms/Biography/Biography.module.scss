@@ -1,0 +1,26 @@
+.container {
+  position: relative;
+  padding: 0 24px;
+
+  @media (min-width: 900px) {
+    padding: 0;
+  }
+}
+
+.link {
+  text-decoration: underline;
+  color: #292961;
+}
+
+.avatar {
+  margin: 12px;
+  margin-left: 0;
+  display: none;
+  min-width: 80px;
+  height: 80px;
+  border-radius: 50%;
+
+  @media (min-width: 900px) {
+    display: block;
+  }
+}

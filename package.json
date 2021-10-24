@@ -18,13 +18,14 @@
     "build:posts": "ts-node scripts/build-posts-content.ts",
     "typecheck": "tsc --noEmit",
     "test": "jest --passWithNoTests",
+    "test:coverage": "jest --coverage",
     "lint": "run-p lint:*",
-    "lint:css": "stylelint \"src/components/**/*.scss\" --config .stylelintrc-format",
-    "lint:js": "eslint 'src/components/**/*.{ts,tsx,js}' --cache",
+    "lint:css": "stylelint \"src/**/*.scss\" --config .stylelintrc-format",
+    "lint:js": "eslint 'src/**/*.{ts,tsx,js}' --cache",
     "format": "run-p format:*",
-    "format:js": "prettier --write \"src/**/*.{ts,tsx,js}\"",
+    "format:js": "prettier --write \"src/**/*.{ts,tsx,js}\" \"pages/**/*.{ts,tsx,js}\"",
     "format:json": "prettier --write \"src/**/*.json\"",
-    "format:css": "prettier --write \"src/components/**/*.scss\" && stylelint --fix \"src/components/**/*.scss\" --config .stylelintrc-format"
+    "format:css": "prettier --write \"src/**/*.scss\" && stylelint --fix \"src/**/*.scss\" --config .stylelintrc-format"
   },
   "husky": {
     "hooks": {
@@ -56,6 +57,7 @@
     "effector-react": "22.0.4",
     "firebase": "9.1.2",
     "front-matter": "4.0.2",
+    "lodash": "4.17.21",
     "next": "11.1.2",
     "postcss-custom-media": "8.0.0",
     "postcss-custom-properties": "12.0.0",
@@ -76,6 +78,7 @@
     "@types/classnames": "2.3.1",
     "@types/firebase": "3.2.1",
     "@types/jest": "27.0.2",
+    "@types/lodash": "4.14.175",
     "@types/node": "16.10.3",
     "@types/prismjs": "1.16.6",
     "@types/react": "17.0.27",
@@ -83,7 +86,7 @@
     "@types/showdown": "1.9.4",
     "@typescript-eslint/eslint-plugin": "5.0.0",
     "@typescript-eslint/parser": "5.0.0",
-    "eslint": "8.0.0",
+    "eslint": "7.32.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-config-react-app": "6.0.0",
     "eslint-plugin-flowtype": "6.1.0",
