@@ -18,6 +18,7 @@
     "build:posts": "ts-node scripts/build-posts-content.ts",
     "typecheck": "tsc --noEmit",
     "test": "jest --passWithNoTests",
+    "test:coverage": "jest --coverage",
     "lint": "run-p lint:*",
     "lint:css": "stylelint \"src/**/*.scss\" --config .stylelintrc-format",
     "lint:js": "eslint 'src/**/*.{ts,tsx,js}' --cache",
