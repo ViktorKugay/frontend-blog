@@ -46,7 +46,7 @@ export async function getStaticProps({params}: GetStaticPropsContext) {
 
   const post = postsStore.findOneBySlug(postSlug);
   if (post) {
-    metricsService.updateViewsById(post.id).catch(() => {});
+    await metricsService.updateViewsById(post.id);
   }
 
   const metrics = await metricsService.findAll();
