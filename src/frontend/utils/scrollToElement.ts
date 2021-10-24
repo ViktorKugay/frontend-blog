@@ -4,3 +4,13 @@ export const scrollToElement = (elementId: string): void => {
     scrollTo.scrollIntoView({block: 'start', behavior: 'smooth'});
   }
 };
+
+export function scrollIntoView(htmlElementId: string) {
+  const element = document.getElementById(htmlElementId);
+  if (element) {
+    element.scrollIntoView({
+      block: 'start',
+      behavior: 'smooth',
+    });
+  }
+}

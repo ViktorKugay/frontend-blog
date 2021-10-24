@@ -7,10 +7,14 @@ import {
   Firestore,
   collection,
   getDocs,
+  increment,
   CollectionReference,
   DocumentData,
   addDoc,
+  updateDoc,
+  doc,
   QueryDocumentSnapshot,
+  DocumentReference,
 } from 'firebase/firestore/lite';
 
 export class FireStoreProvider implements StorageProvider {
@@ -30,6 +34,14 @@ export class FireStoreProvider implements StorageProvider {
     );
   }
 
+  public async incrementById(
+    repo: Repository,
+    id: string,
+    key: string,
+  ): Promise<void> {
+    await updateDoc(doc(this.storage, repo, id), {[key]: increment(1)});
+  }
+
   public async save<T>(repo: Repository, entity: T): Promise<T> {
     await addDoc(this.getCollection(repo), entity);
 
@@ -44,6 +56,10 @@ export class FireStoreProvider implements StorageProvider {
 
   private extractDoc<T>(doc: QueryDocumentSnapshot<DocumentData>): T {
     return {...doc.data(), id: doc.id} as unknown as T;
+  }
+
+  private getDocument(repo: string): DocumentReference<DocumentData> {
+    return doc(this.storage, repo);
   }
 
   private getCollection(repo: string): CollectionReference<DocumentData> {

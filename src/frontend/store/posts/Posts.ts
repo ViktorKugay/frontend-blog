@@ -22,7 +22,11 @@ export class PostsStore {
     return this.posts;
   };
 
-  public findOneBySlug = (slug: string): Post | undefined => {
+  public findOneBySlug = (
+    slug: string | string[] | undefined,
+  ): Post | undefined => {
+    if (!slug) return undefined;
+
     return this.posts.find((p) => p.slug === slug);
   };
 }
