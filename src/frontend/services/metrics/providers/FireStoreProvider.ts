@@ -18,7 +18,15 @@ export class FireStoreProvider implements StorageProvider {
 
   constructor() {
     this.storage = getFirestore(
-      initializeApp(process.env.APP_FIRESTORE_CREDENTIALS as FirebaseOptions),
+      initializeApp({
+        appId: process.env.APP_FIRESTORE_APP_ID,
+        apiKey: process.env.APP_FIRESTORE_API_KEY,
+        projectId: process.env.APP_FIRESTORE_PROJECT_ID,
+        authDomain: process.env.APP_FIRESTORE_AUTH_DOMAIN,
+        databaseURL: process.env.APP_FIRESTORE_DATABASE_URL,
+        storageBucket: process.env.APP_FIRESTORE_STORAGE_BUCKET,
+        messagingSenderId: process.env.APP_FIRESTORE_MESSAGING_SENDER_ID,
+      }),
     );
   }
 
