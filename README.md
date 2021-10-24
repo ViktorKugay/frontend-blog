@@ -19,7 +19,7 @@ This repository was created by Viktor Kugay and stores the source code of [vkuga
 
 This web application is developed using [TypeScript](https://www.typescriptlang.org/), [React](https://ru.reactjs.org/), [Effector](https://github.com/effector/effector), [Atomic Web Design](https://bradfrost.com/blog/post/atomic-web-design/), [PostCSS](https://github.com/postcss/postcss), [NextJS](https://nextjs.org/), [Google Firestore](https://firebase.google.com/docs/firestore) and hosted on [Netlify](https://www.netlify.com/). 
 
-<div align='left'>
+<div align='center'>
   <img src='./public/domain.png' width="600" />
 </div>
 
