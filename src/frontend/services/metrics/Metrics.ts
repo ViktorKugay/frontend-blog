@@ -20,4 +20,12 @@ export class MetricsService {
   public findAll = async (): Promise<MetricsTable> => {
     return await this.storageProvider.findAll(Repository.PostMetrics);
   };
+
+  public updateViewsById = async (id: string): Promise<void> => {
+    await this.storageProvider.incrementById(
+      Repository.PostMetrics,
+      id,
+      'views',
+    );
+  };
 }

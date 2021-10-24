@@ -9,4 +9,10 @@ export abstract class StorageProvider {
    * Save the given entity
    */
   public abstract save<T>(repo: Repository, entity: T): Promise<T>;
+
+  public abstract incrementById(
+    repo: Repository,
+    id: string,
+    key: string,
+  ): Promise<void>;
 }

@@ -1,6 +1,5 @@
 import {MetricsStore} from './metrics/Metrics';
 import {PostsStore} from './posts/Posts';
-import {metricsService} from '../services';
 
-export const metricsStore = new MetricsStore(metricsService);
+export const metricsStore = new MetricsStore();
 export const postsStore = new PostsStore();
