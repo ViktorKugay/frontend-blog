@@ -3,7 +3,7 @@ import s from './AppPage.module.scss';
 import {PropsWithChildren, useEffect} from 'react';
 
 import {MuiThemeProvider} from '@context/MuiThemeProvider';
-import { scrollIntoView } from '../../../utils/scrollToElement';
+import {scrollIntoView} from '../../../utils/scrollToElement';
 
 interface Props {}
 
