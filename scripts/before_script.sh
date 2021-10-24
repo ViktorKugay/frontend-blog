@@ -9,7 +9,7 @@ function coverage() {
 }
 
 function envs() {
-  cp .env.example .env  
+  cp .env.example .env.local
 }
 
 coverage
