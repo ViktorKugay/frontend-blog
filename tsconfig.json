@@ -18,7 +18,18 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "moduleResolution": "node",
-    "isolatedModules": true
+    "isolatedModules": true,
+    "paths": {
+      "@atomic/molecules/*": ["src/frontend/components/molecules/*"],
+      "@atomic/organisms/*": ["src/frontend/components/organisms/*"],
+      "@atomic/templates/*": ["src/frontend/components/templates/*"],
+      "@atomic/atoms/*": ["src/frontend/components/atoms/*"],
+      "@constants/*": ["src/frontend/constants/*"],
+      "@services": ["src/frontend/services"],
+      "@context/*": ["src/frontend/context/*"],
+      "@hooks/*": ["src/frontend/hooks/*"],
+      "@store": ["src/frontend/store"],
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "postcss.config.js"],
   "exclude": ["node_modules"]

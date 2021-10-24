@@ -1,0 +1,20 @@
+{
+  "NavLinks": [
+    {
+      "title": "bio",
+      "href": "/#biography"
+    },
+    {
+      "title": "blog",
+      "href": "/#blog"
+    },
+    {
+      "title": "projects",
+      "href": "/#projects"
+    },
+    {
+      "title": "newsletter",
+      "href": "/#newsletter"
+    }
+  ]
+}

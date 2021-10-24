@@ -1,0 +1,35 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+
+  @media (min-width: 900px) {
+    flex-direction: row;
+  }
+}
+
+.link {
+  margin: 4px 0;
+  text-decoration: none;
+
+  &:first-child {
+    margin-left: 0;
+
+    @media (min-width: 900px) {
+      margin: 0 24px;
+    }
+  }
+
+  &:last-child {
+    margin-right: 0;
+
+    @media (min-width: 900px) {
+      margin: 0 24px;
+    }
+  }
+
+  @media (min-width: 900px) {
+    margin: 0 24px;
+  }
+}
