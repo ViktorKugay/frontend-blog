@@ -1,5 +1,5 @@
 import {StorageProvider} from './types';
-import {initializeApp} from 'firebase/app';
+import {FirebaseOptions, initializeApp} from 'firebase/app';
 import {Repository} from '../../../constants/repositories';
 
 import {
@@ -18,16 +18,7 @@ export class FireStoreProvider implements StorageProvider {
 
   constructor() {
     this.storage = getFirestore(
-      // initializeApp(process.env.FIRESTORE_CREDENTIALS as FirebaseOptions),
-      initializeApp({
-        apiKey: 'AIzaSyCTNeDdmqEkCbPE00ZNKAjFQXWsHSqBInU',
-        authDomain: 'vkugay-4f82b.firebaseapp.com',
-        databaseURL: 'https://vkugay-4f82b.firebaseio.com',
-        projectId: 'vkugay-4f82b',
-        storageBucket: 'vkugay-4f82b.appspot.com',
-        messagingSenderId: '974742954660',
-        appId: '1:974742954660:web:ecfaaa1c0f841339c6fc31',
-      }),
+      initializeApp(process.env.APP_FIRESTORE_CREDENTIALS as FirebaseOptions),
     );
   }
 
