@@ -1,6 +1,9 @@
 # Viktor Kugay Blog
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/01c06e55-e877-4054-8677-9a76221070bc/deploy-status)](https://app.netlify.com/sites/nervous-hamilton-710e37/deploys)
+[![Build Status](https://app.travis-ci.com/ViktorKugay/frontend-blog.svg?branch=main)](https://app.travis-ci.com/ViktorKugay/frontend-blog)
+[![Maintainability](https://api.codeclimate.com/v1/badges/8c8184fda716aca2e7d6/maintainability)](https://codeclimate.com/github/ViktorKugay/frontend-blog/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/8c8184fda716aca2e7d6/test_coverage)](https://codeclimate.com/github/ViktorKugay/frontend-blog/test_coverage)
 
 ## Description
 
