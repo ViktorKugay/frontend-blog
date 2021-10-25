@@ -1,10 +1,7 @@
-import {PropsWithChildren} from 'react';
 import {HeadMeta} from '@constants/components';
 import Head from 'next/head';
 
-interface Props {}
-
-export function MainHead({}: PropsWithChildren<Props>): JSX.Element {
+export function MainHead(): JSX.Element {
   return (
     <Head>
       <meta charSet="UTF-8" />
