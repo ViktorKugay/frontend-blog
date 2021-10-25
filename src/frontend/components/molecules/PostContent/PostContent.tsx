@@ -3,7 +3,7 @@ import s from './PostContent.module.scss';
 import Prism from 'prismjs';
 import {useEffect} from 'react';
 
-import {scrollToElement} from '../../../utils/scrollToElement';
+import {scrollToElement} from '@utils/scrollToElement';
 
 interface Props {
   id: string;
@@ -31,7 +31,7 @@ export const PostContent: React.FC<Props> = ({
     <div id={cardId} className={s.container}>
       <h1>{title}</h1>
       <h2>{description}</h2>
-      <img src={image} className={s.image} />
+      <img src={image} alt="awesome image" className={s.image} />
       <div dangerouslySetInnerHTML={{__html: html}} />
     </div>
   );

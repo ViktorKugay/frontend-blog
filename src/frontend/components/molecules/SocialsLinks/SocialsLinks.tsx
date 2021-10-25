@@ -11,7 +11,7 @@ interface SocialsLinksProps {
   className?: string;
 }
 
-export function SocialsLinks({className}: SocialsLinksProps): JSX.Element {
+export function SocialsLinks({className = ''}: SocialsLinksProps): JSX.Element {
   return (
     <div className={cn(s.root, className)}>
       {c.SocialsLinks.map(({linkHref, imageSrc}, index) => (

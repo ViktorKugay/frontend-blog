@@ -1,6 +1,6 @@
-import {StorageProvider} from './types';
-import {FirebaseOptions, initializeApp} from 'firebase/app';
-import {Repository} from '../../../constants/repositories';
+import {Repository} from './database.types';
+import {initializeApp} from 'firebase/app';
+import {Collection} from '../constants';
 
 import {
   getFirestore,
@@ -17,7 +17,7 @@ import {
   DocumentReference,
 } from 'firebase/firestore/lite';
 
-export class FireStoreProvider implements StorageProvider {
+export class FireStoreRepository implements Repository {
   private readonly storage: Firestore;
 
   constructor() {
@@ -35,31 +35,34 @@ export class FireStoreProvider implements StorageProvider {
   }
 
   public async incrementById(
-    repo: Repository,
+    collection: Collection,
     id: string,
     key: string,
   ): Promise<void> {
-    await updateDoc(doc(this.storage, repo, id), {[key]: increment(1)});
+    await updateDoc(this.getDocument(collection, id), {[key]: increment(1)});
   }
 
-  public async save<T>(repo: Repository, entity: T): Promise<T> {
-    await addDoc(this.getCollection(repo), entity);
+  public async save<T>(collection: Collection, entity: T): Promise<T> {
+    await addDoc(this.getCollection(collection), entity);
 
     return entity;
   }
 
-  public async findAll<T>(repo: Repository): Promise<T[]> {
-    const {docs} = await getDocs(this.getCollection(repo));
+  public async findAll<T>(collection: Collection): Promise<T[]> {
+    const {docs} = await getDocs(this.getCollection(collection));
 
     return docs.map((doc) => this.extractDoc<T>(doc));
   }
 
   private extractDoc<T>(doc: QueryDocumentSnapshot<DocumentData>): T {
-    return {...doc.data(), id: doc.id} as unknown as T;
+    return {...doc.data(), postId: doc.id} as unknown as T;
   }
 
-  private getDocument(repo: string): DocumentReference<DocumentData> {
-    return doc(this.storage, repo);
+  private getDocument(
+    repo: string,
+    id: string,
+  ): DocumentReference<DocumentData> {
+    return doc(this.storage, repo, id);
   }
 
   private getCollection(repo: string): CollectionReference<DocumentData> {
