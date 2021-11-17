@@ -5,6 +5,10 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/96ddd21bbab2f0d7b852/maintainability)](https://codeclimate.com/github/ViktorKugay/frontend-blog/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/96ddd21bbab2f0d7b852/test_coverage)](https://codeclimate.com/github/ViktorKugay/frontend-blog/test_coverage)
 
+## Example
+
+[vkugay.ru](https://vkugay.ru/)
+
 ## Table Of Contents
 
   - [Description](#description)
